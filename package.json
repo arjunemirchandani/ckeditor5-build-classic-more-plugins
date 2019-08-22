@@ -1,7 +1,10 @@
 {
-  "name": "@ckeditor/ckeditor5-build-classic",
+  "name": "@arjunemirchandani/ckeditor5-build-classic-more-plugins",
   "version": "12.3.1",
   "description": "The classic editor build of CKEditor 5 – the best browser-based rich text editor.",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "keywords": [
     "ckeditor5-build",
     "ckeditor",
@@ -62,8 +65,8 @@
   },
   "author": "CKSource (http://cksource.com/)",
   "license": "GPL-2.0-or-later",
-  "homepage": "https://ckeditor.com/ckeditor-5",
-  "bugs": "https://github.com/ckeditor/ckeditor5-build-classic/issues",
+  "homepage": "https://github.com/arjunemirchandani/ckeditor5-build-classic-more-plugins",
+  "bugs": "https://github.com/arjunemirchandani/ckeditor5-build-classic-more-plugins/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/arjunemirchandani/ckeditor5-build-classic.git"
