@@ -10,6 +10,18 @@ CKEditor 5 classic editor build
 
 The classic editor build for CKEditor 5. Read more about the [classic editor build](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor) and see the [demo](https://ckeditor.com/docs/ckeditor5/latest/examples/builds/classic-editor.html).
 
+To install additional plugins required, run:
+
+* npm install --save @ckeditor/ckeditor5-basic-styles
+* npm install --save @ckeditor/ckeditor5-alignment
+
+NOTE: Due to the non-deterministic way how npm installs packages, it is recommended to run rm -rf node_modules && npm install when in doubt. This will prevent some packages from getting installed more than once in node_modules/ (which might lead to broken builds).
+
+To build, run:
+
+yarn run build
+
+
 ![CKEditor 5 classic editor build screenshot](https://c.cksource.com/a/1/img/npm/ckeditor5-build-classic.png)
 
 ## Documentation

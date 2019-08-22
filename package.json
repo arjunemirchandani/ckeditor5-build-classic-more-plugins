@@ -66,7 +66,7 @@
   "bugs": "https://github.com/ckeditor/ckeditor5-build-classic/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ckeditor/ckeditor5-build-classic.git"
+    "url": "https://github.com/arjunemirchandani/ckeditor5-build-classic.git"
   },
   "scripts": {
     "build": "webpack --mode production",
@@ -86,5 +86,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-alignment": "^11.1.3"
   }
 }
