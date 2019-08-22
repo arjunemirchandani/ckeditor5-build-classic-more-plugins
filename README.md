@@ -14,6 +14,7 @@ To install additional plugins required, run:
 
 * npm install --save @ckeditor/ckeditor5-basic-styles
 * npm install --save @ckeditor/ckeditor5-alignment
+* npm install --save @ckeditor/ckeditor5-font
 
 NOTE: Due to the non-deterministic way how npm installs packages, it is recommended to run rm -rf node_modules && npm install when in doubt. This will prevent some packages from getting installed more than once in node_modules/ (which might lead to broken builds).
 
