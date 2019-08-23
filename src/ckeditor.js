@@ -5,7 +5,6 @@
 
 // The editor creator to use.
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
-
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
@@ -31,6 +30,7 @@ import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Font from '@ckeditor/ckeditor5-font/src/font';
+import CustomField from '../plugins/customfield';
 
 export default class ClassicEditor extends ClassicEditorBase {
 }
@@ -61,7 +61,8 @@ ClassicEditor.builtinPlugins = [
 	Underline,
 	Strikethrough,
 	Alignment,
-	Font
+	Font,
+	CustomField
 ];
 
 // Editor configuration.
@@ -86,7 +87,8 @@ ClassicEditor.defaultConfig = {
 			'fontSize',
 			'fontFamily',
 			'fontColor',
-			'strikethrough'
+			'strikethrough',
+			'customfield'
 		]
 	},
 	image: {
