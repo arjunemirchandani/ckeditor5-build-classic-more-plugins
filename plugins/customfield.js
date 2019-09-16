@@ -7,6 +7,11 @@ import { addListToDropdown, createDropdown } from '@ckeditor/ckeditor5-ui/src/dr
 import Collection from '@ckeditor/ckeditor5-utils/src/collection';
 import Model from '@ckeditor/ckeditor5-ui/src/model';
 
+/**
+ * The name of the custom fields plugin.
+ */
+export const CUSTOM_FIELDS = 'customFields';
+
 export default class CustomField extends Plugin {
 	/**
 	 * @inheritDoc
@@ -27,24 +32,26 @@ class CustomfieldCommand extends Command {
 	execute( { value } ) {
 		const editor = this.editor;
 
-		editor.model.change( writer => {
+		// editor.model.change( writer => {
+		editor.model.change( () => {
+			const content = '[' + value.value + ']';
+			const viewFragment = editor.data.processor.toView( content );
+			const modelFragment = editor.data.toModel( viewFragment );
+			editor.model.insertContent( modelFragment );
+
 			// Create a <customfield> elment with the "name" attribute...
-			const customfield = writer.createElement( 'customfield', { name: value } );
-
+			// const customfield = writer.createElement( 'customfield', { name: value } );
 			// ... and insert it into the document.
-			editor.model.insertContent( customfield );
-
+			// editor.model.insertContent( customfield );
 			// Put the selection on the inserted element.
-			writer.setSelection( customfield, 'on' );
+			// writer.setSelection( customfield, 'on' );
 		} );
 	}
 
 	refresh() {
 		const model = this.editor.model;
 		const selection = model.document.selection;
-
 		const isAllowed = model.schema.checkChild( selection.focus.parent, 'customfield' );
-
 		this.isEnabled = isAllowed;
 	}
 }
@@ -53,7 +60,7 @@ class CustomfieldUI extends Plugin {
 	init() {
 		const editor = this.editor;
 		const t = editor.t;
-		const customfieldNames = editor.config.get( 'customfieldConfig.types' );
+		const customFieldNames = editor.config.get( CUSTOM_FIELDS + '.types' );
 
 		// The "customfield" dropdown must be registered among the UI components of the editor
 		// to be displayed in the toolbar.
@@ -61,12 +68,12 @@ class CustomfieldUI extends Plugin {
 			const dropdownView = createDropdown( locale );
 
 			// Populate the list in the dropdown with items.
-			addListToDropdown( dropdownView, getDropdownItemsDefinitions( customfieldNames ) );
+			addListToDropdown( dropdownView, getDropdownItemsDefinitions( customFieldNames ) );
 
 			dropdownView.buttonView.set( {
 				// The t() function helps localize the editor. All strings enclosed in t() can be
 				// translated and change when the language of the editor changes.
-				label: t( 'Custom Fields' ),
+				label: t( 'Insert Custom Field' ),
 				tooltip: true,
 				withText: true
 			} );
@@ -82,15 +89,15 @@ class CustomfieldUI extends Plugin {
 	}
 }
 
-function getDropdownItemsDefinitions( customfieldNames ) {
+function getDropdownItemsDefinitions( customFieldNames ) {
 	const itemDefinitions = new Collection();
 
-	for ( const name of customfieldNames ) {
+	for ( const name of customFieldNames ) {
 		const definition = {
 			type: 'button',
 			model: new Model( {
 				commandParam: name,
-				label: name,
+				label: name.label,
 				withText: true
 			} )
 		};
@@ -103,6 +110,20 @@ function getDropdownItemsDefinitions( customfieldNames ) {
 }
 
 class CustomfieldEditing extends Plugin {
+	/**
+	 * @inheritDoc
+	 */
+	constructor( editor ) {
+		super( editor );
+
+		// Define default configuration using font families shortcuts.
+		editor.config.define( CUSTOM_FIELDS, {
+			types: [
+				{ label: 'Default Option', value: 'defaultVal' }
+			]
+		} );
+	}
+
 	static get requires() {
 		return [ Widget ];
 	}
@@ -117,9 +138,6 @@ class CustomfieldEditing extends Plugin {
 			'viewToModelPosition',
 			viewToModelPositionOutsideModelElement( this.editor.model, viewElement => viewElement.hasClass( 'customfield' ) )
 		);
-		this.editor.config.define( 'customfieldConfig', {
-			types: [ 'date', 'first name', 'surname' ]
-		} );
 	}
 
 	_defineSchema() {
