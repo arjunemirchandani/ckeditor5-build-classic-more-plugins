@@ -127,9 +127,9 @@ class CustomTabEditing extends Plugin {
 			},
 			model: ( viewElement, modelWriter ) => {
 				// Extract the "name" from "{name}".
-				const name = viewElement.getChild( 0 ).data.slice( 1, -1 );
+				// const name = viewElement.getChild( 0 ).data.slice( 1, -1 );
 
-				return modelWriter.createElement( 'customTab', { name } );
+				return modelWriter.createElement( 'customTab', { name: 'Hello' } );
 			}
 		} );
 
