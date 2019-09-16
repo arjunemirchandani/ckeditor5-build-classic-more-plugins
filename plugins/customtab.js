@@ -155,7 +155,7 @@ class CustomTabEditing extends Plugin {
 			} );
 
 			// Insert the customfield name (as a text).
-			const innerText = viewWriter.createText( '' );
+			const innerText = viewWriter.createText( ' ' );
 			viewWriter.insert( viewWriter.createPositionAt( customfieldView, 0 ), innerText );
 
 			return customfieldView;
