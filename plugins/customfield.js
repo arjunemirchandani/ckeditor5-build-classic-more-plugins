@@ -33,14 +33,21 @@ class CustomfieldCommand extends Command {
 		const editor = this.editor;
 
 		editor.model.change( writer => {
+			const selection = editor.model.document.selection;
+			const currentAttributes = selection.getAttributes();
+			const insertPosition = selection.focus;
+
+			writer.insertText( '[' + value.value + ']', currentAttributes, insertPosition );
+
 			// const content = '[' + value.value + ']';
 			// const viewFragment = editor.data.processor.toView( content );
 			// const modelFragment = editor.data.toModel( viewFragment );
-			editor.model.insertContent( writer.createText( '[!' + value.value + ']' ) );
-
+			// const currentAttributes = editor.model.document.selection.getAttributes();
+			// editor.model.insertContent( writer.createText( '[!' + value.value + ']' ), currentAttributes );
 			// Create a <customfield> elment with the "name" attribute...
 			// const customfield = writer.createElement( 'customfield', { name: value } );
 			// ... and insert it into the document.
+			// editor.model.insertContent( customfield, currentAttributes );
 			// editor.model.insertContent( customfield );
 			// Put the selection on the inserted element.
 			// writer.setSelection( customfield, 'on' );
@@ -197,7 +204,7 @@ class CustomfieldEditing extends Plugin {
 			} );
 
 			// Insert the customfield name (as a text).
-			const innerText = viewWriter.createText( '[' + name.toUpperCase() + ']' );
+			const innerText = viewWriter.createText( '[' + name.value.toUpperCase() + ']' );
 			viewWriter.insert( viewWriter.createPositionAt( customfieldView, 0 ), innerText );
 
 			return customfieldView;
