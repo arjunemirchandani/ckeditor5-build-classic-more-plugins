@@ -32,12 +32,11 @@ class CustomfieldCommand extends Command {
 	execute( { value } ) {
 		const editor = this.editor;
 
-		// editor.model.change( writer => {
-		editor.model.change( () => {
-			const content = '[' + value.value + ']';
-			const viewFragment = editor.data.processor.toView( content );
-			const modelFragment = editor.data.toModel( viewFragment );
-			editor.model.insertContent( modelFragment );
+		editor.model.change( writer => {
+			// const content = '[' + value.value + ']';
+			// const viewFragment = editor.data.processor.toView( content );
+			// const modelFragment = editor.data.toModel( viewFragment );
+			editor.model.insertContent( writer.createText( '[' + value.value + ']' ) );
 
 			// Create a <customfield> elment with the "name" attribute...
 			// const customfield = writer.createElement( 'customfield', { name: value } );
