@@ -31,6 +31,7 @@ import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Font from '@ckeditor/ckeditor5-font/src/font';
 import CustomField from '../plugins/customfield';
+import CustomTab from '../plugins/customtab';
 
 export default class ClassicEditor extends ClassicEditorBase {
 }
@@ -62,7 +63,8 @@ ClassicEditor.builtinPlugins = [
 	Strikethrough,
 	Alignment,
 	Font,
-	CustomField
+	CustomField,
+	CustomTab
 ];
 
 // Editor configuration.
@@ -88,7 +90,8 @@ ClassicEditor.defaultConfig = {
 			'fontFamily',
 			'fontColor',
 			'strikethrough',
-			'customfield'
+			'customfield',
+			'customTab'
 		]
 	},
 	image: {
