@@ -36,7 +36,7 @@ class CustomfieldCommand extends Command {
 			// const content = '[' + value.value + ']';
 			// const viewFragment = editor.data.processor.toView( content );
 			// const modelFragment = editor.data.toModel( viewFragment );
-			editor.model.insertContent( writer.createText( '[' + value.value + ']' ) );
+			editor.model.insertContent( writer.createText( '[!' + value.value + ']' ) );
 
 			// Create a <customfield> elment with the "name" attribute...
 			// const customfield = writer.createElement( 'customfield', { name: value } );
