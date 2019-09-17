@@ -1,5 +1,5 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
-import { toWidget } from '@ckeditor/ckeditor5-widget/src/utils';
+import { toWidget, viewToModelPositionOutsideModelElement } from '@ckeditor/ckeditor5-widget/src/utils';
 import Widget from '@ckeditor/ckeditor5-widget/src/widget';
 import Command from '@ckeditor/ckeditor5-core/src/command';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
@@ -97,6 +97,11 @@ class CustomTabEditing extends Plugin {
 		this._defineConverters();
 
 		this.editor.commands.add( 'customTab', new CustomTabCommand( this.editor ) );
+
+		// ADDED
+		this.editor.editing.mapper.on( 'viewToModelPosition',
+			viewToModelPositionOutsideModelElement( this.editor.model, viewElement => viewElement.hasClass( 'customTab' ) )
+		);
 	}
 
 	_defineSchema() {
