@@ -117,7 +117,7 @@ class CustomBullet2Editing extends Plugin {
 			isObject: false,
 
 			// The customfield can have many types, like date, name, surname, etc:
-			allowAttributes: [ 'name', 'style' ]
+			allowAttributes: [ 'name' ]
 		} );
 	}
 
@@ -133,7 +133,7 @@ class CustomBullet2Editing extends Plugin {
 				// Extract the "name" from "{name}".
 				// const name = viewElement.getChild( 0 ).data.slice( 1, -1 );
 
-				return modelWriter.createElement( 'customBullet2', { name: 'Hello' } );
+				return modelWriter.createElement( 'customBullet2', { name: 'Hello2' } );
 			}
 		} );
 
