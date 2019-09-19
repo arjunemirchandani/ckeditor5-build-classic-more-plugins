@@ -71,9 +71,8 @@ class CustomBulletUI extends Plugin {
 			const view = new ButtonView( locale );
 
 			view.set( {
-				label: t( 'TAB' ),
+				label: t( 'Bullet Dot' ),
 				icon: bulletIcon,
-				keystroke: 'TAB',
 				tooltip: true
 			} );
 
