@@ -3,7 +3,7 @@ import { toWidget, viewToModelPositionOutsideModelElement } from '@ckeditor/cked
 import Widget from '@ckeditor/ckeditor5-widget/src/widget';
 import Command from '@ckeditor/ckeditor5-core/src/command';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
-import boldIcon from '@ckeditor/ckeditor5-basic-styles/theme/icons/bold.svg';
+import bulletIcon from '@ckeditor/ckeditor5-list/theme/icons/bulletedlist.svg';
 
 /**
  * The name of the custom fields plugin.
@@ -72,7 +72,7 @@ class CustomBulletUI extends Plugin {
 
 			view.set( {
 				label: t( 'TAB' ),
-				icon: boldIcon,
+				icon: bulletIcon,
 				keystroke: 'TAB',
 				tooltip: true
 			} );
