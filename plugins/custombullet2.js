@@ -3,7 +3,7 @@ import { toWidget, viewToModelPositionOutsideModelElement } from '@ckeditor/cked
 import Widget from '@ckeditor/ckeditor5-widget/src/widget';
 import Command from '@ckeditor/ckeditor5-core/src/command';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
-import bulletIcon from '@ckeditor/ckeditor5-list/theme/icons/bulletedlist.svg';
+import bulletIcon from '@ckeditor/ckeditor5-list/theme/icons/numberedlist.svg';
 
 /**
  * The name of the custom fields plugin.
