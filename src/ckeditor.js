@@ -32,6 +32,7 @@ import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Font from '@ckeditor/ckeditor5-font/src/font';
 import CustomField from '../plugins/customfield';
 import CustomTab from '../plugins/customtab';
+import CustomBullet from '../plugins/custombullet';
 
 export default class ClassicEditor extends ClassicEditorBase {
 }
@@ -64,7 +65,8 @@ ClassicEditor.builtinPlugins = [
 	Alignment,
 	Font,
 	CustomField,
-	CustomTab
+	CustomTab,
+	CustomBullet
 ];
 
 // Editor configuration.
@@ -91,7 +93,8 @@ ClassicEditor.defaultConfig = {
 			'fontColor',
 			'strikethrough',
 			'customfield',
-			'customTab'
+			'customTab',
+			'customBullet'
 		]
 	},
 	image: {
@@ -110,5 +113,5 @@ ClassicEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'en',
 };
