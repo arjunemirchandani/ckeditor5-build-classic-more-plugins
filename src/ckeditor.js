@@ -33,6 +33,7 @@ import Font from '@ckeditor/ckeditor5-font/src/font';
 import CustomField from '../plugins/customfield';
 import CustomTab from '../plugins/customtab';
 import CustomBullet from '../plugins/custombullet';
+import CustomBullet2 from '../plugins/custombullet2';
 
 export default class ClassicEditor extends ClassicEditorBase {
 }
@@ -66,7 +67,8 @@ ClassicEditor.builtinPlugins = [
 	Font,
 	CustomField,
 	CustomTab,
-	CustomBullet
+	CustomBullet,
+	CustomBullet2,
 ];
 
 // Editor configuration.
@@ -94,7 +96,8 @@ ClassicEditor.defaultConfig = {
 			'strikethrough',
 			'customfield',
 			'customTab',
-			'customBullet'
+			'customBullet',
+			'customBullet2'
 		]
 	},
 	image: {
