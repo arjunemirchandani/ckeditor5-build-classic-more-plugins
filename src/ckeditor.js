@@ -34,14 +34,14 @@ import CustomField from '../plugins/customfield';
 import CustomTab from '../plugins/customtab';
 import CustomBullet from '../plugins/custombullet';
 import CustomBullet2 from '../plugins/custombullet2';
-import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+// import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 
 export default class ClassicEditor extends ClassicEditorBase {
 }
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
-	RemoveFormat,
+	// RemoveFormat,
 	Essentials,
 	UploadAdapter,
 	Autoformat,
@@ -119,5 +119,5 @@ ClassicEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en',
+	language: 'en'
 };
