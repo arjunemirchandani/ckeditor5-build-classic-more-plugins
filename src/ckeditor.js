@@ -34,12 +34,14 @@ import CustomField from '../plugins/customfield';
 import CustomTab from '../plugins/customtab';
 import CustomBullet from '../plugins/custombullet';
 import CustomBullet2 from '../plugins/custombullet2';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 
 export default class ClassicEditor extends ClassicEditorBase {
 }
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
+	RemoveFormat,
 	Essentials,
 	UploadAdapter,
 	Autoformat,
@@ -68,14 +70,14 @@ ClassicEditor.builtinPlugins = [
 	CustomField,
 	CustomTab,
 	CustomBullet,
-	CustomBullet2,
+	CustomBullet2
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
-			'heading',
+			'heading', 'removeFormat',
 			'|',
 			'alignment',
 			'bold',
@@ -97,7 +99,8 @@ ClassicEditor.defaultConfig = {
 			'customfield',
 			'customTab',
 			'customBullet',
-			'customBullet2'
+			'customBullet2',
+			'removeHighlight'
 		]
 	},
 	image: {
