@@ -30,10 +30,10 @@ import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Font from '@ckeditor/ckeditor5-font/src/font';
-import CustomField from '../plugins/customfield';
-import CustomTab from '../plugins/customtab';
-import CustomBullet from '../plugins/custombullet';
-import CustomBullet2 from '../plugins/custombullet2';
+// import CustomField from '../plugins/customfield';
+// import CustomTab from '../plugins/customtab';
+// import CustomBullet from '../plugins/custombullet';
+// import CustomBullet2 from '../plugins/custombullet2';
 // import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 
 export default class ClassicEditor extends ClassicEditorBase {
@@ -66,11 +66,11 @@ ClassicEditor.builtinPlugins = [
 	Underline,
 	Strikethrough,
 	Alignment,
-	Font,
-	CustomField,
-	CustomTab,
-	CustomBullet,
-	CustomBullet2
+	Font
+	// CustomField,
+	// CustomTab,
+	// CustomBullet,
+	// CustomBullet2
 ];
 
 // Editor configuration.
@@ -96,10 +96,10 @@ ClassicEditor.defaultConfig = {
 			'fontFamily',
 			'fontColor',
 			'strikethrough',
-			'customfield',
-			'customTab',
-			'customBullet',
-			'customBullet2',
+			// 'customfield',
+			// 'customTab',
+			// 'customBullet',
+			// 'customBullet2',
 			'removeHighlight'
 		]
 	},
