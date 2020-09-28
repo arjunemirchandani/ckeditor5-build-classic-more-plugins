@@ -77,7 +77,8 @@ ClassicEditor.builtinPlugins = [
 ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
-			'heading', 'removeFormat',
+			'heading',
+			// 'removeFormat',
 			'|',
 			'alignment',
 			'bold',
