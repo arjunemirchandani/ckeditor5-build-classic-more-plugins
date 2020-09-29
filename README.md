@@ -22,6 +22,8 @@ To build, run:
 
 yarn run build
 
+IMPORTANT - check sample/index.html in the browser to see if the build was successfull.
+
 
 ![CKEditor 5 classic editor build screenshot](https://c.cksource.com/a/1/img/npm/ckeditor5-build-classic.png)
 
